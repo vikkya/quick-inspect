@@ -7,9 +7,12 @@
     <title>Quick Inspect Pty Ltd.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script> -->
 <style>
 .nav-bg {
   background-image: url('header.png');
@@ -60,7 +63,7 @@
             <div class="col-lg-6">
               <div class="card bg-transparent border-0">
                 <div class="card-body">
-                  <p class="card-title fs-1 fw-bold">Inspect Vehicle Within <br>Few Minutes</p>
+                  <p class="card-title fs-1 fw-bold">Inspe<span class="">ct Vehicle Within </span><br>Few Minutes</p>
                   <div class="alert alert-secondary" role="alert">
                     <ul class="rounded-3 list-unstyled px-lg-4 px-2 py-2 py-lg-3 d-flex align-content-start flex-wrap">
                       <li class="position-relative ps-3 pn-regular my-1"><i class="bi bi-check2"></i> Digital Report</li>
@@ -80,25 +83,25 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid bg-secondary-subtle">
         <div class="row">
-          <div class="col-lg-12">
-            <h1 class="text-center">Quick Inspect Offerings</h1>
+          <div class="col-lg-12 px-0">
+            <h1 class="text-center mt-3">Quick Inspect Offerings</h1>
             <ul class="nav nav-underline mb-3 justify-content-center" id="pills-tab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-cars-tab" data-bs-toggle="pill" data-bs-target="#pills-cars" type="button" role="tab" aria-controls="pills-cars" aria-selected="true">Cars</button>
               </li>
             </ul>
-            <div class="tab-content" id="pills-tabContent">
+            <div class="tab-content bg-primary p-lg-5 p-sm-2" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-cars" role="tabpanel" aria-labelledby="pills-cars-tab" tabindex="0">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card">
+                    <div class="col-lg-4 mb-2">
+                      <div class="card h-100">
                         <div class="card-body text-center">
                           <h2 class="card-title">Standard Inspection</h2>
-                          <h1>$190</h1>
-                          <h6 class="card-subtitle mb-2 text-body-secondary">View Sample Report</h6>
+                          <h1>$190 + GST</h1>
+                          <h6 class="card-subtitle mb-2 text-body-secondary"><a href="/downloads/standard-report.pdf">View Sample Report</a></h6>
                           <div class="text-left">
                             <p class="card-text fw-bold mb-0">Features</p>
                             <ul class="list-group list-group-flush">
@@ -110,8 +113,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-4">
-                      <div class="card">
+                    <div class="col-lg-4 mb-2">
+                      <div class="card h-100">
                         <div class="card-body text-center">
                           <h2 class="card-title">High Inspection</h2>
                           <h1>$190</h1>
@@ -127,8 +130,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-4">
-                      <div class="card">
+                    <div class="col-lg-4 mb-2">
+                      <div class="card h-100">
                         <div class="card-body text-center">
                           <h2 class="card-title">Comprehensive Inspection</h2>
                           <h1>$190</h1>
@@ -141,6 +144,25 @@
                               <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Repair estimates for damaged vehicle parts.</li>
                               <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Vehicle hygiene & cleanliness evaluation and score</li>
                               <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Exclusive video covering entire vehicles</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 mb-2">
+                      <div class="card h-100">
+                        <div class="card-body text-center">
+                          <h2 class="card-title">Inspection Add-ons</h2>
+                          <h1>$15*</h1>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">View Sample Report</h6>
+                          <div class="text-left">
+                            <p class="card-text fw-bold mb-0">Features</p>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Dynamic scan tool</li>
+                              <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Detailed Paint guage test</li>
+                              <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Undercarriage suspension, breaks, wheels, exhaust</li>
+                              <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> ECU Scan</li>
+                              <li class="list-group-item border-bottom-0"><i class="bi bi-check2"></i> Battery health</li>
                             </ul>
                           </div>
                         </div>
@@ -166,19 +188,18 @@
             </ul>
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-dealers" role="tabpanel" aria-labelledby="pills-dealers-tab" tabindex="0">
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row">
-                    <div class="col-lg-6">
-                      <img class="img-fluid" src="dealers_1.png" alt="dealers_1" srcset="" width="100%" height="100%">
-
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                      <img class="img-fluid" src="dealers_1.png" alt="dealers_1" width="100%" height="100%">
                     </div>
-                    <div class="col-lg-6">
-                      <ul class="list-group list-group-flush">
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                      <ul class="list-group list-group-flush mt-sm-2">
                         <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-search fs-1 p-2 shadow rounded-1"></i> </p> <p>Complete Transparency and Visibility - Exhaustive Checklist Points.</p></li>
                         <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-person-heart fs-1 p-2 shadow rounded-1"></i> </p> <p>Inspected by Handpicked Best Certified Technicians</p></li>
                         <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-gear-wide-connected fs-1 p-2 shadow rounded-1"></i> </p> <p>Get Faulty Parts Repair Estimate - Ensures Optimal Pricing While Buying/Selling Used Vehicle</p></li>
-                      </ul>
-                      <button class="btn btn-primary rounded-1 text-center">Book Inspection</button>
+                        </ul>
+                        <button class="btn btn-primary rounded-1">Book an Inspection</button>
                     </div>
                   </div>
                 </div>
@@ -190,26 +211,26 @@
                       <img class="img-fluid" src="mechanic_2.png" alt="mechanic_2" srcset="" width="100%" height="100%">
                     </div>
                     <div class="col-lg-6">
-                      <div class="container">
+                      <div class="container-fluid mt-sm-2">
                         <div class="row">
                           <div class="col-lg-6">
-                            <p class="text-center"><i class="bi bi-person-gear shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-center">Join Quick Inspect, Perform Inspection and Earn</p>
+                            <p class="text-lg-center text-sm-start"><i class="bi bi-person-gear shadow fs-1 p-2 rounded-1"></i></p>
+                            <p class="text-lg-center text-sm-start">Join Quick Inspect, Perform Inspection and Earn</p>
                           </div>
                           <div class="col-lg-6">
-                            <p class="text-center"><i class="bi bi-car-front-fill shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-center">Flexible Work at your own convenience</p>
+                            <p class="text-lg-center text-sm-start"><i class="bi bi-car-front-fill shadow fs-1 p-2 rounded-1"></i></p>
+                            <p class="text-lg-center text-sm-start">Flexible Work at your own convenience</p>
                           </div>
                           <div class="col-lg-6">
-                            <p class="text-center"><i class="bi bi-person-lock shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-center">Be your own Boss</p>
+                            <p class="text-lg-center text-sm-start"><i class="bi bi-person-lock shadow fs-1 p-2 rounded-1"></i></p>
+                            <p class="text-lg-center text-sm-start">Be your own Boss</p>
                           </div>
                           <div class="col-lg-6">
-                            <p class="text-center"><i class="bi bi-wrench-adjustable shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-center">Get trained using Quick Inspect tutorials</p>
+                            <p class="text-lg-center text-sm-start"><i class="bi bi-wrench-adjustable shadow fs-1 p-2 rounded-1"></i></p>
+                            <p class="text-lg-center text-sm-start">Get trained using Quick Inspect tutorials</p>
                           </div>
                           <div class="col-lg-12 mt-2 text-center">
-                            <button class="btn btn-primary">Register as Inspector</button>
+                            <button class="btn btn-primary rounded-1">Register as Inspector</button>
                           </div>
                         </div>
                       </div>
@@ -222,23 +243,23 @@
         </div>
       </div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-4 d-flex justify-content-center align-items-center">
+        <div class="row mt-3">
+          <div class="col-4 d-flex justify-content-center align-items-center">
             <i class="bi bi-geo-alt-fill fs-1 me-2"></i>
-            <p class="mb-0 lh-1"><span class="fw-bold fs-3">500+</span> <br> <span class="fs-6 fw-light">Suburbs</span></p>
+            <p class="mb-0 lh-1"><span class="fw-bold fs-3">250+</span> <br> <span class="fs-6 fw-light">Suburbs</span></p>
           </div>
-          <div class="col-lg-4 d-flex justify-content-center align-items-center">
+          <div class="col-4 d-flex justify-content-center align-items-center">
             <i class="bi bi-car-front fs-1 me-2"></i>
             <p class="mb-0 lh-1"><span class="fw-bold fs-3">1000+</span> <br> <span class="fs-6 fw-light">Inspections</span></p>
           </div>
-          <div class="col-lg-4 d-flex justify-content-center align-items-center">
+          <div class="col-4 d-flex justify-content-center align-items-center">
             <i class="bi bi-person-gear fs-1 me-2"></i>
-            <p class="mb-0 lh-1"><span class="fw-bold fs-3">1000+</span> <br> <span class="fs-6 fw-light">Auto Experts</span></p>
+            <p class="mb-0 lh-1"><span class="fw-bold fs-3">200+</span> <br> <span class="fs-6 fw-light">Auto Experts</span></p>
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row">
+      <div class="container-fluid" id="how_we_work">
+        <div class="row mt-3">
           <div class="col-lg-12">
             <h2 class="text-center">How we work?</h2>
             <ul class="nav nav-underline mb-3 justify-content-center" id="pills-tab" role="tablist">
@@ -256,7 +277,7 @@
                     <div class="col-lg-8">
                       <div class="row">
                         <div class="col-lg-6">
-                          <div class="card mb-3 bg-primary-subtle">
+                          <div class="card mb-3 h-100 bg-primary-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
                                 <p>Step 01</p>
@@ -276,13 +297,13 @@
                           </div>
                         </div>
                         <div class="col-lg-6">
-                          <div class="card mb-3">
+                          <div class="card mb-3 h-100 bg-info-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
                                 <p>Step 02</p>
                               </div>
-                              <div class="col-md-10">
-                                <div class="card-body">
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
                                   <h5 class="card-title fs-6 lh-1">Auto Inspection Request gets forwarded to Quick Inspect</h5>
                                 </div>
                               </div>
@@ -290,13 +311,13 @@
                           </div>
                         </div>
                         <div class="col-lg-6">
-                          <div class="card mb-3">
+                          <div class="card mb-3 h-100 bg-warning-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
                                 <p>Step 03</p>
                               </div>
-                              <div class="col-md-10">
-                                <div class="card-body">
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
                                   <h5 class="card-title fs-6 lh-1">Order gets mapped to the Technician</h5>
                                   <ol class="ps-3 list-style-disc">
                                     <li class="border-0 fs-05 lh-1">Based on Technician's service Location</li>
@@ -310,13 +331,13 @@
                           </div>
                         </div>
                         <div class="col-lg-6">
-                          <div class="card mb-3">
+                          <div class="card mb-3 h-100 bg-secondary-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
                                 <p>Step 04</p>
                               </div>
-                              <div class="col-md-10">
-                                <div class="card-body">
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
                                   <h5 class="card-title fs-6 lh-1">Technician performs Auto Inspection through Quick Inspect</h5>
                                   <ol class="ps-3 list-style-disc">
                                     <li class="border-0 fs-05 lh-1">Technician perform Inspection on 121 checkpoints</li>
@@ -329,13 +350,13 @@
                           </div>
                         </div>
                         <div class="col-lg-6">
-                          <div class="card mb-3">
+                          <div class="card mb-3 h-100 bg-danger-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
                                 <p>Step 05</p>
                               </div>
-                              <div class="col-md-10">
-                                <div class="card-body">
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
                                   <h5 class="card-title fs-6 lh-1">Receive Digital Inspection Report</h5>
                                   <ol class="ps-3 list-style-disc">
                                     <li class="border-0 fs-05 lh-1">Once Technician completes the inspection you will receive the inspection report</li>
@@ -345,12 +366,10 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 align-self-center text-center">
                           <button class="btn btn-primary">Get in Touch</button>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-lg-4">
                     </div>
                   </div>
                 </div>
@@ -358,7 +377,108 @@
               <div class="tab-pane fade" id="pills-mechanic-1" role="tabpanel" aria-labelledby="pills-mechanic-1-tab" tabindex="0">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-lg-8"></div>
+                    <div class="col-lg-8">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="card mb-3 h-100 bg-primary-subtle">
+                            <div class="row g-0">
+                              <div class="col-md-2">
+                                <p>Step 01</p>
+                              </div>
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
+                                  <h5 class="card-title fs-6 lh-1">Register With Quick Inspect</h5>
+                                  <ol class="ps-3 list-style-disc">
+                                    <li class="border-0 fs-05 lh-1">Join Quick Inspect for Free</li>
+                                    <li class="border-0 fs-05 lh-1">Complete your Phone, Email and Document Verification</li>
+                                    <li class="border-0 fs-05 lh-1">Complete your Profile</li>
+                                  </ol>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="card mb-3 h-100 bg-info-subtle">
+                            <div class="row g-0">
+                              <div class="col-md-2">
+                                <p>Step 02</p>
+                              </div>
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
+                                  <h5 class="card-title fs-6 lh-1">Get Trained Using Quick Inspect Tutorials</h5>
+                                  <ol class="ps-3 list-style-disc">
+                                    <li class="border-0 fs-05 lh-1">Watch Tutorials anywhere anytime</li>
+                                    <li class="border-0 fs-05 lh-1">Undergo Simple test</li>
+                                    <li class="border-0 fs-05 lh-1">Become Certified Technician</li>
+                                  </ol>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="card mb-3 h-100 bg-warning-subtle">
+                            <div class="row g-0">
+                              <div class="col-md-2">
+                                <p>Step 03</p>
+                              </div>
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
+                                  <h5 class="card-title fs-6 lh-1">Receive Orders From Quick Inspect</h5>
+                                  <ol class="ps-3 list-style-disc">
+                                    <li class="border-0 fs-05 lh-1">Set your own scheduling preferences</li>
+                                    <li class="border-0 fs-05 lh-1">Accept Orders based on your availability</li>
+                                  </ol>  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="card mb-3 h-100 bg-secondary-subtle">
+                            <div class="row g-0">
+                              <div class="col-md-2">
+                                <p>Step 04</p>
+                              </div>
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
+                                  <h5 class="card-title fs-6 lh-1">Perform Inspection Through Quick Inspect</h5>
+                                  <ol class="ps-3 list-style-disc">
+                                    <li class="border-0 fs-05 lh-1">Perform Inspection on 121 checkpoints</li>
+                                    <li class="border-0 fs-05 lh-1">Rate each parameter out of 10</li>
+                                    <li class="border-0 fs-05 lh-1">Upload Photos</li>
+                                    <li class="border-0 fs-05 lh-1">Complete Inspection</li>
+                                  </ol>    
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="card mb-3 h-100 bg-danger-subtle">
+                            <div class="row g-0">
+                              <div class="col-md-2">
+                                <p>Step 05</p>
+                              </div>
+                              <div class="col-md-10 pb-3">
+                                <div class="card-body bg-white rounded-4">
+                                  <h5 class="card-title fs-6 lh-1">Get Paid</h5>
+                                  <ol class="ps-3 list-style-disc">
+                                    <li class="border-0 fs-05 lh-1">Get paid for each inspection done</li>
+                                    <li class="border-0 fs-05 lh-1">Timely Payment</li>
+                                    <li class="border-0 fs-05 lh-1">Track your Payment Records</li>
+                                  </ol>  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 align-self-center text-center">
+                          <button class="btn btn-primary">Register as Technician</button>
+                        </div>
+                      </div>  
+                    </div>
                     <div class="col-lg-4">
                       <img class="img-fluid" src="mechanic_3.png" alt="mechanic_3" srcset="" width="100%" height="100%">
                     </div>
@@ -369,8 +489,33 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row"></div>
+      <div class="container-fluid bg-secondary-subtle">
+        <div class="row mt-3 p-3">
+          <div class="col-lg-3 col-sm-12 col-md-8">
+            <p class="fw-bold">Order Inspection</p>
+            <p class="">Standard Inspection</p>
+          </div>
+          <div class="col-lg-3 col-sm-12 col-md-8">
+            <p class="fw-bold">Follow us</p>
+            <p class="mb-0">
+              <i class="bi bi-facebook fs-3 me-2"></i>
+              <i class="bi bi-instagram fs-3 me-2"></i>
+              <i class="bi bi-linkedin fs-3 me-2"></i> 
+              <i class="bi bi-twitter-x fs-3 me-2"></i>
+            </p>
+          </div>
+          <div class="col-lg-3 col-sm-12 col-md-8">
+            <p></p>
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
+            <p>Inspection Terms</p>
+          </div>
+          <div class="col-lg-3 col-sm-12 col-md-8">
+            <p><img src="./icon.png" alt="QuickInspect" width="50px" height="50px"></p>
+            <p>info@quickinspect.com.au</p>
+            <p>+61 410 791 575</p>
+          </div>
+        </div>
       </div>
 </body>
 </html>
