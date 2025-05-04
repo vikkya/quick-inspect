@@ -40,6 +40,9 @@
 .fs-05{
   font-size: 1em;
 }
+.cursor-pointer{
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -50,7 +53,7 @@
             <div class="col-lglapse navbar-col-lglapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ms-auto">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#about-us">About Us</a>
                 <a class="nav-link" href="#how_we_work">How we work</a>
                 <a class="nav-link" href="#locations">Locations</a>
               </div>
@@ -209,32 +212,18 @@
               <div class="tab-pane fade" id="pills-mechanics" role="tabpanel" aria-labelledby="pills-mechanics-tab" tabindex="0">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-12 col-md-5 col-lg-5">
                       <img class="img-fluid" src="mechanic_2.png" alt="mechanic_2" srcset="" width="100%" height="100%">
                     </div>
-                    <div class="col-lg-6">
-                      <div class="container-fluid mt-sm-2">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <p class="text-lg-center text-sm-start"><i class="bi bi-person-gear shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-lg-center text-sm-start">Join Quick Inspect, Perform Inspection and Earn</p>
-                          </div>
-                          <div class="col-lg-6">
-                            <p class="text-lg-center text-sm-start"><i class="bi bi-car-front-fill shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-lg-center text-sm-start">Flexible Work at your own convenience</p>
-                          </div>
-                          <div class="col-lg-6">
-                            <p class="text-lg-center text-sm-start"><i class="bi bi-person-lock shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-lg-center text-sm-start">Be your own Boss</p>
-                          </div>
-                          <div class="col-lg-6">
-                            <p class="text-lg-center text-sm-start"><i class="bi bi-wrench-adjustable shadow fs-1 p-2 rounded-1"></i></p>
-                            <p class="text-lg-center text-sm-start">Get trained using Quick Inspect tutorials</p>
-                          </div>
-                          <div class="col-lg-12 mt-2 text-center">
-                            <button class="btn btn-primary rounded-1">Register as Inspector</button>
-                          </div>
-                        </div>
+                    <div class="col-sm-12 col-md-7 col-lg-7">
+                      <ul class="list-group list-group-flush mt-sm-2">
+                        <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-person-gear fs-1 p-2 shadow rounded-1"></i> </p> <p>Join Quick Inspect, Perform Inspection and Earn.</p></li>
+                        <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-car-front-fill fs-1 p-2 shadow rounded-1"></i> </p> <p>Flexible Work at your own convenience</p></li>
+                        <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-person-lock fs-1 p-2 shadow rounded-1"></i> </p> <p>Be your own Boss</p></li>
+                        <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-wrench-adjustable fs-1 p-2 shadow rounded-1"></i> </p> <p>Get trained using Quick Inspect tutorials</p></li>
+                      </ul>
+                      <button class="btn btn-primary rounded-1">Register as Inspector</button>
+                    </div>
                       </div>
                     </div>
                   </div>
@@ -244,7 +233,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid" id="locations">
         <div class="row mt-3">
           <div class="col-4 d-flex justify-content-center align-items-center">
             <i class="bi bi-geo-alt-fill fs-1 me-2"></i>
@@ -278,7 +267,7 @@
                   <div class="row">
                     <div class="col-lg-8">
                       <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-primary-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -298,7 +287,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-info-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -312,7 +301,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-warning-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -332,7 +321,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-secondary-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -351,7 +340,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-danger-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -381,7 +370,7 @@
                   <div class="row">
                     <div class="col-lg-8">
                       <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-primary-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -400,7 +389,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-info-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -419,7 +408,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-warning-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -437,7 +426,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-secondary-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -457,7 +446,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <div class="card mb-3 h-100 bg-danger-subtle">
                             <div class="row g-0">
                               <div class="col-md-2">
@@ -491,7 +480,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid bg-secondary-subtle">
+      <div class="container-fluid bg-secondary-subtle" id="about-us">
         <div class="row mt-3 p-3">
           <div class="col-lg-3 col-sm-12 col-md-8">
             <p class="fw-bold">Order Inspection</p>
@@ -500,22 +489,65 @@
           <div class="col-lg-3 col-sm-12 col-md-8">
             <p class="fw-bold">Follow us</p>
             <p class="mb-0">
-              <i class="bi bi-facebook fs-3 me-2"></i>
-              <i class="bi bi-instagram fs-3 me-2"></i>
-              <i class="bi bi-linkedin fs-3 me-2"></i> 
-              <i class="bi bi-twitter-x fs-3 me-2"></i>
+              <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook fs-3 me-2"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram fs-3 me-2"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin fs-3 me-2"></i></a>
+              <a href="https://x.com" target="_blank"><i class="bi bi-twitter-x fs-3 me-2"></i></a>
             </p>
           </div>
           <div class="col-lg-3 col-sm-12 col-md-8">
             <p></p>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
-            <p>Inspection Terms</p>
+            <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#privacy_policy">Privacy Policy</p>
+            <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#terms_conditions">Terms & Conditions</p>
+            <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#inspection_terms">Inspection Terms</p>
           </div>
           <div class="col-lg-3 col-sm-12 col-md-8">
             <p><img src="./icon.png" alt="QuickInspect" width="50px" height="50px"></p>
             <p>info@quickinspect.com.au</p>
             <p>+61 410 791 575</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- models -->
+      <div class="modal fade" id="terms_conditions" tabindex="-1" aria-labelledby="terms_conditionsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="terms_conditionsLabel">Terms & Conditions</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Adding Soon
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="privacy_policyLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="privacy_policyLabel">Privacy Policy</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Adding Soon
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal fade" id="inspection_terms" tabindex="-1" aria-labelledby="inspection_termsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="inspection_termsLabel">Inspection Terms</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Adding Soon
+            </div>
           </div>
         </div>
       </div>
