@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Inspect Pty Ltd.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+<style>
+.nav-bg {
+  background-image: url('header.png');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.footer-bg {
+  background-image: url('footer.png');
+  background-repeat: no-repeat;
+  height: 150px;
+}
+.object-fit {
+  object-fit: cover;
+}
+.h-500{
+  height: 500px;
+}
+.h-400{
+  height: 400px;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-bg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Quick Inspect</a>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="col-lglapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <div class="col-lglapse navbar-col-lglapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#how_we_work">How we work</a>
+                <a class="nav-link" href="#locations">Locations</a>
+              </div>
+            </div>
+          </div>
+      </nav>
+    <div class="container-fluid mt-lg-5">
+        <div class="row justify-content-center justify-content-sm-center">
+            <div class="col-lg-3 col-sm-1 mb-2">
+                <div class="card shadow border-5  border-info-subtle border-0 border-bottom rounded-5">
+                    <div class="card-body text-center">
+                        <p class="card-title fs-1"><i class="bi bi-tools"></i></p>
+                      <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">How we work</p>
+                      <p class="card-text">Fast & easy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-1 mb-2">
+                <div class="card shadow border-5  border-info-subtle border-0 border-bottom rounded-5">
+                    <div class="card-body text-center">
+                        <p class="card-title fs-1"><i class="bi bi-cash-coin"></i></p>
+                        <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Pricing</p>
+                        <p class="card-text">Lowest & trusted.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-1 mb-2">
+                  <div class="card shadow border-5  border-info-subtle border-0 border-bottom rounded-5">
+                    <div class="card-body text-center">
+                      <p class="card-title fs-1"><i class="bi bi-pin-map-fill"></i></p>
+                      <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Locations</p>
+                      <p class="card-text">Victoria Wide.</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid my-lg-5">
+        <div class="row">
+            <h3 class="text-center mb-lg-5">How to Trust us?</h3>
+            <div class="col-lg-3">
+                <div class="card border-0 text-center">
+                    <div class="card-body">
+                      <p class="card-title fs-1"><i class="bi bi-calendar-check"></i></p>
+                      <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Simplest Booking Process</p>
+                      <p class="card-text">Provide us with the seller’s details and leave the rest to us</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card border-0 text-center">
+                    <div class="card-body">
+                      <p class="card-title fs-1"><i class="bi bi-hourglass-split"></i></p>
+                      <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Rapid Turnaround</p>
+                      <p class="card-text">Receive your comprehensive report within 24hrs* of submission, right after the inspection has been processed</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card border-0 text-center">
+                    <div class="card-body">
+                      <p class="card-title fs-1"><i class="bi bi-journals"></i></p>
+                      <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Completely Transparent</p>
+                      <p class="card-text">Our qualified hero mechanics work independently, and deliver you an transparent unbiased report</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card border-0 text-center">
+                    <div class="card-body">
+                      <p class="card-title fs-1"><i class="bi bi-shield-fill-check"></i></p>
+                      <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Trusted & Verified Mechanics</p>
+                      <p class="card-text">Our growing mechanics network will help you inspect the car with care and experts knowledge in the field</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center">Our Trusted Dealers</h3>
+                <div id="carouselExample" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="card flex-row align-items-center border-5 border-0 border-bottom border-info-subtle">
+                        <div>
+                          <img src="https://placehold.co/100x100" class="rounded-circle" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Auto Body Parts</h5>
+                          <p class="card-text">Quick Inspect has made my inspections hassle free join.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card flex-row align-items-center border-5 border-0 border-bottom border-info-subtle">
+                        <div>
+                          <img src="https://placehold.co/100x100" class="rounded-circle" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Auto Body Parts</h5>
+                          <p class="card-text">Quick Inspect has made my inspections hassle free join.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card flex-row align-items-center border-5 border-0 border-bottom border-info-subtle">
+                        <div>
+                          <img src="https://placehold.co/100x100" class="rounded-circle" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Auto Body Parts</h5>
+                          <p class="card-text">Quick Inspect has made my inspections hassle free join.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center">Our Comprehensive Report</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Brakes, Tyres & wheels
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Tyre Size, Tyre Type, Rim Type, Driver Front Tyre Depth Check, Driver Front Tyre Manufacturing Date, Driver Front Tyre Shape, Driver Back Tyre Depth Check, Driver Back Tyre Manufacturing Date, Driver Back Tyre Shape, Passenger Back Tyre Depth Check, Passenger Back Tyre Manufacturing Date, Passenger Back Tyre Shape, Passenger Front Tyre Depth Check, Passenger Front Tyre Manufacturing Date, Passenger Front Tyre Shape, Stepney Tyre Depth Check, Stepney Tyre Manufacturing Date, Stepney Tyre Shape, Signs of Camber Issue.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          Gears & Transmission
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Check Gear Box/Transmission Shifting, Check 4x4 Shifting, Clutch Pedal, Clutch Engagement - RPM Downgrade, Clutch Engagement - RPM Upgrade, Clutch Engagement - RPM With Acceleration, Left Axle, Right Axle, Abnormal Noise.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          Engine
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Car Start, Engine Oil Quality, Engine Oil Cap, Engine Mounting & Components, AC Compressor Mounting, Check for Oil Leaks Near the Engine, Radiator Fan, Radiator Condition, Smoke from Dipstick Point, Transmission Oil Leakage, Engine Noise, Engine Vibration, Hoses, Exhaust Sound, Coolant Quality, Coolant Level, AC Fan Belt, Engine Fan Belt, Radiator Fan, Exhaust Pipe, Smoke Emission, Battery</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="steering_suspension">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-steering_suspension" aria-expanded="false" aria-controls="flush-steering_suspension">
+                          Steering & Suspension
+                        </button>
+                      </h2>
+                      <div id="flush-steering_suspension" class="accordion-collapse collapse" aria-labelledby="steering_suspension" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Brake Pedal, Steering Rotating Smoothly, Steering Coming Back While Driving, Steering Weird Noise, Alignment, Bubbling, Steering Vibration, Brake Pads Front Driver Side, Brake Discs Front Driver Side, Brake Callipers Front Driver Side, Brake Pads Front Passenger Side, Brake Discs Front Passenger Side, Brake Callipers Front Passenger Side, Brake Pads Back Passenger Side, Brake Discs Back Passenger Side, Brake Callipers Back Passenger Side, Brake Pads Back Driver Side, Brake Discs Back Driver Side, Brake Callipers Back Driver Side, Brake Fluid Reservoir, Brake Fluid Cap, Parking Hand Brake</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="electrical_system">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-electrical_system" aria-expanded="false" aria-controls="flush-electrical_system">
+                          Electrical & Interior System
+                        </button>
+                      </h2>
+                      <div id="flush-electrical_system" class="accordion-collapse collapse" aria-labelledby="electrical_system" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Wiring, Central Locking Working, Ignition Switch / Push Button, Driver Front Indicator, Driver Back Indicator, Passenger Front Indicator, Passenger Back Indicator, Brake Light Driver, Brake Light Passenger, Driver Side Tail Light, Passenger Side Tail Light, Front Number Plate Light, Rear Number Plate Light, Driver Side Headlight, Driver Side Headlight High Beam, Passenger Side Headlight, Passenger Side Headlight High Beam, Back Camera, Reverse Parking Sensor, Sun Roof, Onboard Computer AdBlue Level, Entertainment System, Steering Mounted Controls, Cruise Control, Steering Wheel Condition, Seat Adjustment Driver Side, Seat Adjustment Passenger Side, Multi-Function Display Showing Fuel and Kms, Interior Lights, Seat Adjustment Passenger Rear Side, Seat Adjustment Driver Rear Side, Window Driver Side, Window Passenger Side, Window Passenger Rear Side, Window Driver Rear Side, Bonnet Release Operation, Fuel Cap Release Operation, Front Driver Side Floor, Front Driver Side Seat Condition, Front Driver Side Seat Belt, Back Driver Side Floor, Back Driver Side Seat Condition, Back Driver Side Seat Belt, Back Passenger Side Floor, Back Passenger Side Seat Condition, Back Passenger Side Seat Belt, Front Passenger Side Floor, Front Passenger Side Seat Condition, Front Passenger Side Seat Belt, Rear Side Floor - 7 Seater, Rear Seat Condition - 7 Seater, Rear Seat Belt - 7 Seater, Car Top from Inside, Car Horn, Left Side Mirror Controls, Right Side Mirror Controls, Rear View Mirror, Glove Box, Window Safety Lock, Child Safety Lock, Dashboard Condition, Wiper, Check All Buttons, Tool Kit.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="cooling_exhaust_systems">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-cooling_exhaust_systems" aria-expanded="false" aria-controls="flush-cooling_exhaust_systems">
+                          Cooling & Exhaust Systems
+                        </button>
+                      </h2>
+                      <div id="flush-cooling_exhaust_systems" class="accordion-collapse collapse" aria-labelledby="cooling_exhaust_systems" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Air Conditioning On, Air Conditioning Cool Mode, Air Conditioning Hot Mode, Air Conditioning Direction Mode Working, De-fogger Front Vent Working, De-fogger Rear Vent Working, Air Conditioning All Vents, AC Abnormal Vibration.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="interior">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-interior" aria-expanded="false" aria-controls="flush-interior">
+                          Interior
+                        </button>
+                      </h2>
+                      <div id="flush-interior" class="accordion-collapse collapse" aria-labelledby="interior" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Sound system, Setero, Display, Speaker, Bluetooth, Air Bags, Seat Covers, Door Buttons, Floor Mats.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="windscreen_wipers">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-windscreen_wipers" aria-expanded="false" aria-controls="flush-windscreen_wipers">
+                          Windscreen & Wipers
+                        </button>
+                      </h2>
+                      <div id="flush-windscreen_wipers" class="accordion-collapse collapse" aria-labelledby="windscreen_wipers" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Front Wipers, Back Wipers, Wiper operations, Wiper Rubbers, Water.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="lighting">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-lighting" aria-expanded="false" aria-controls="flush-lighting">
+                          Lighting
+                        </button>
+                      </h2>
+                      <div id="flush-lighting" class="accordion-collapse collapse" aria-labelledby="lighting" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Check Engine Light, Battery Warning Light, Engine Oil Pressure Low Warning Light, Airbag Sensor Warning Light, ABS Sensor Warning Light, Power Steering Warning Light, Low Coolant/Overheating Warning Light, Brake System Warning Light, Any Other Control Light Found.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="under_body_structure">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-under_body_structure" aria-expanded="false" aria-controls="flush-under_body_structure">
+                          Under body structure
+                        </button>
+                      </h2>
+                      <div id="flush-under_body_structure" class="accordion-collapse collapse" aria-labelledby="under_body_structure" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Driver Side Body Chassis, Passenger Side Body Chassis, Rear Subframe, Engine Damage Underbody, Under Trays, Front Protection Cover, Rear Protection Cover, Silencer, Fuel Tank, Any Fluid Leaks Under Body.</div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                  <img src="mechanic.jpg" class="card-img-top object-fit h-500" alt="">
+                </div>
+          </div>
+        </div>
+    </div>
+    <div class="container-fluid my-5" id="how_we_work">
+        <div class="row">
+            <h3 class="text-center">How we work</h3>
+            <div class="col-lg-6">
+              <div class="card border-0 text-center">
+                <div class="card-body">
+                  <p class="card-title fs-1"><i class="bi bi-car-front-fill"></i></p>
+                  <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Step 1</p>
+                  <p class="card-text">You saw a potential seller and want to buy the car?</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card border-0 text-center">
+                <div class="card-body">
+                  <p class="card-title fs-1"><i class="bi bi-card-checklist"></i></p>
+                  <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Step 2</p>
+                  <p class="card-text">Fill in the form in the app and relax.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card border-0 text-center">
+                <div class="card-body">
+                  <p class="card-title fs-1"><i class="bi bi-bezier2"></i></p>
+                  <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Step 3</p>
+                  <p class="card-text">We will go through the hassel of inspection for you and provide you with a comprehensive report.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card border-0 text-center">
+                <div class="card-body">
+                  <p class="card-title fs-1"><i class="bi bi-cart-check-fill"></i></p>
+                  <p class="card-subtitle fs-3 fw-light mb-2 text-body-secondary">Step 4</p>
+                  <p class="card-text">Take the final decision to buy or not.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-5" id="locations">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                  <img src="map.jpg" class="card-img-top object-fit h-400" alt="">
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="accordion accordion-flush" id="accordionFlushExample1">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1" aria-expanded="false" aria-controls="flush-collapseOne1">
+                          New South Wales
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne1" class="accordion-collapse collapse" aria-labelledby="flush-headingOne1" data-bs-parent="#accordionFlushExample1">
+                        <div class="accordion-body">List of suburbs, coming soon</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo1" aria-expanded="false" aria-controls="flush-collapseTwo1">
+                          Victoria
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo1" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo1" data-bs-parent="#accordionFlushExample1">
+                        <div class="accordion-body">List of suburbs, coming soon</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree1" aria-expanded="false" aria-controls="flush-collapseThree1">
+                          Queensland
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree1" class="accordion-collapse collapse" aria-labelledby="flush-headingThree1" data-bs-parent="#accordionFlushExample1">
+                        <div class="accordion-body">List of suburbs, coming soon</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingFour1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour1" aria-expanded="false" aria-controls="flush-collapseFour1">
+                          Tasmania
+                        </button>
+                      </h2>
+                      <div id="flush-collapseFour1" class="accordion-collapse collapse" aria-labelledby="flush-headingFour1" data-bs-parent="#accordionFlushExample1">
+                        <div class="accordion-body">List of suburbs, coming soon</div>
+                      </div>
+                    </div>
+                    
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12"></div>
+        <div class="col-lg-6 col-sm-12">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsJRqj7640Q7oQd2tswEVmFp_F504Z78rERvf3kuOZY5m4fQ/viewform?embedded=true" width="640" height="991" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-transparent text-white footer-bg">
+        <div class="row">
+           <div class="col-lg-3 text-dark align-content-center col-sm-12">
+            Copyrights 2025. Quick Inspect Pty Ltd.
+          </div>
+          <div class="col-lg-3 col-sm-12">
+            <ul class="list-group list-group-flush bg-transparent">
+              <li class="list-group-item border-bottom-0 bg-transparent"> <a href="#how_we_work"> How we work</a></li>
+              <li class="list-group-item border-bottom-0 bg-transparent"><a href="#locations">Locations</a></li>
+              <li class="list-group-item border-bottom-0 bg-transparent">About Us</li>
+            </ul>
+          </div>
+           <div class="col-lg-3 col-sm-12">
+            <ul class="list-group list-group-flush bg-transparent">
+              <li class="list-group-item border-bottom-0 bg-transparent cursor-pointer" data-bs-toggle="modal" data-bs-target="#terms_conditions">Terms & Conditions</li>
+              <li class="list-group-item border-bottom-0 bg-transparent cursor-pointer" data-bs-toggle="modal" data-bs-target="#privacy_policy">Privacy Policy</li>
+              <li class="list-group-item border-bottom-0 bg-transparent cursor-pointer" data-bs-toggle="modal" data-bs-target="#inspection_terms">Inspection Terms</li>
+            </ul>
+           </div>
+           <div class="col-lg-3 col-sm-12 text-dark align-content-center">
+            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram fs-1"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook fs-1"></i></a>
+            <a href="https://web.whatsapp.com" target="_blank"><i class="bi bi-whatsapp fs-1"></i></a>
+          <br>
+          <span>info@quickinspect.com.au</span> 
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="terms_conditions" tabindex="-1" aria-labelledby="terms_conditionsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="terms_conditionsLabel">Terms & Conditions</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Adding Soon
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="privacy_policyLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="privacy_policyLabel">Privacy Policy</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Adding Soon
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="inspection_terms" tabindex="-1" aria-labelledby="inspection_termsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="inspection_termsLabel">Inspection Terms</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Adding Soon
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
