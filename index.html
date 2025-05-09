@@ -45,6 +45,12 @@
 .fs-35{
   font-size: 3.5rem;
 }
+.list-style-square {
+  list-style-type: square;
+}
+.pdf-download:hover {
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -356,7 +362,7 @@
             <p></p>
             <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#privacy_policy">Privacy Policy</p>
             <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#terms_conditions">Terms & Conditions</p>
-            <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#inspection_terms">Inspection Terms</p>
+            <p class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#quick_inspect_disclaimer">Quick Inspect Disclaimer</p>
           </div>
           <div class="col-lg-3 col-sm-12 col-md-8">
             <p><img src="./assets/imgs/quick_inspect.png" alt="QuickInspect" width="150px" height="150px"></p>
@@ -395,15 +401,79 @@
         </div>
       </div>
   
-      <div class="modal fade" id="inspection_terms" tabindex="-1" aria-labelledby="inspection_termsLabel" aria-hidden="true">
-        <div class="modal-dialog">
+      <div class="modal fade" id="quick_inspect_disclaimer" tabindex="-1" aria-labelledby="quick_inspect_disclaimerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="inspection_termsLabel">Inspection Terms</h1>
+              <h1 class="modal-title fs-5" id="quick_inspect_disclaimerLabel">Quick Inspect - Inspection Disclaimer Summary</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Adding Soon
+              <div>
+                <p class="fw-semibold fs-5 mb-0">Visual Inspection Limitation</p>
+                <p class="mb-0">Quick Inspect conducts a strictly visual, non-mechanical inspection of vehicles. No parts are
+                  removed or dismantled during the inspection. Our assessments are based on visible evidence and
+                  operational signs only, at the time and date of the inspection.</p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">Scope of Report</p>
+                <p class="mb-0">This report is not a roadworthy certificate, nor a substitute for any certification required for vehicle
+                  registration in Australia. It does not guarantee mechanical reliability, manufacturer recall status, or
+                  service history.
+                  </p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">Component & System Limitations</p>
+                <p class="mb-0">Items not tested include but are not limited to:</p>
+                <ol class="list-style-square">
+                  <li>Fuel and oil consumption</li>
+                  <li>Timing belts</li>
+                  <li>Navigation systems, infotainment devices</li>
+                  <li>Alarm/security systems</li>
+                  <li>Wipers, lights auto-switching</li>
+                  <li>Internal leaks and water ingress</li>
+                  <li>Filters, DPFs, and catalytic converters</li>
+                </ol>
+                <p class="mb-0">We do not decode or verify tyre load ratings, manufacture date, or compliance with OEM specs.</p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">VIN & Engine Number Recording</p>
+                <p class="mb-0">VIN and engine numbers are only recorded if clearly visible on the vehicle. If not legible, they may
+                  be referenced from available documentation. Tampering checks are visual only and not conclusive.</p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">Accuracy & Time Sensitivity</p>
+                <p class="mb-0">The inspection reflects the vehicle's condition only at the time of assessment. Quick Inspect accepts
+                  no responsibility for any changes in vehicle condition that occur after the inspection, including transit
+                  damage or dealer modifications.</p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">No Transaction Involvement</p>
+                <p class="mb-0">Quick Inspect is not involved in any vehicle transaction. We do not mediate disputes, guarantee
+                  purchase value, or verify the authenticity of documentation. Buyers must carry out their own due
+                  diligence, including checking for write-off history or ownership verification.</p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">No Warranty or Guarantee</p>
+                <p class="mb-0">The report does not constitute a warranty or guarantee of the vehicle's past, present, or future
+                  condition. It should be used as a guide only. The buyer retains full responsibility for final inspection
+                  and purchase decisions.</p>
+              </div>
+              <div>
+                <p class="fw-semibold fs-5 mb-0">Limitation of Liability</p>
+                <p class="mb-0">To the extent permitted by law, Quick Inspect's liability is limited to the amount paid for the
+                  inspection service, and we accept no liability for:</p>
+                  <ol class="list-style-square">
+                    <li>Indirect, incidental, or consequential losses</li>
+                    <li>Loss of profit, data, or business</li>
+                    <li>Costs of repair or future defects</li>
+                    <li>Undetected faults due to visual-only inspection scope</li>
+                  </ol>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a class="text-decoration-none " href="/assets/pdfs/Quick_Inspect_Disclaimer.pdf" download><button type="button" class="btn btn-primary">Download</button></a>
             </div>
           </div>
         </div>
@@ -415,9 +485,9 @@
             <div class="modal-body">
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScsJRqj7640Q7oQd2tswEVmFp_F504Z78rERvf3kuOZY5m4fQ/viewform?embedded=true" width="100%" height="990" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
-          </div>
-          <div class="modal-footer d-lg-none d-sm-block d-md-block">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="modal-footer d-lg-none d-sm-block d-md-block">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
