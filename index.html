@@ -237,7 +237,7 @@
                         <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-person-lock fs-1 p-2 shadow rounded-1"></i> </p> <p>Be your own Boss</p></li>
                         <li class="list-group-item border-bottom-0 d-flex align-items-center"><p class="me-3"><i class="bi bi-wrench-adjustable fs-1 p-2 shadow rounded-1"></i> </p> <p>Get trained using Quick Inspect tutorials</p></li>
                       </ul>
-                      <button class="btn btn-primary rounded-1  my-3 my-md-2 w-100" data-bs-toggle="modal" data-bs-target="#mechanic_form">Start earning now!!!</button>
+                      <button class="btn btn-primary rounded-1  my-3 my-md-1 w-100" data-bs-toggle="modal" data-bs-target="#mechanic_form">Start earning now!!!</button>
                     </div>
                       </div>
                     </div>
@@ -377,7 +377,7 @@
                           </div>
                         </div>
                         <div class="col-lg-6 align-self-center text-center">
-                          <button class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#dealer_form">Request a call back!</button>
+                          <button class="btn btn-danger btn-lg mb-3 mb-md-1" data-bs-toggle="modal" data-bs-target="#dealer_form">Request a call back!</button>
                         </div>
                       </div>
                     </div>
@@ -943,7 +943,7 @@
       </div>
 
       <div class="modal fade" id="dealer_form" tabindex="-1" aria-labelledby="dealer_formLabel">
-        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-body">
               <div id="DealerFormContainer">
@@ -958,12 +958,15 @@
       </div>
 
       <div class="modal fade" id="mechanic_form" tabindex="-1" aria-labelledby="mechanic_formLabel">
-        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-body">
               <div id="MechanicFormContainer">
                 <iframe id="MechanicFormIframe" width="100%" height="990" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
               </div>
+            </div>
+            <div class="modal-footer d-lg-none d-sm-block d-md-block">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
