@@ -22,7 +22,11 @@
     <link rel="icon" href="favicon.ico">
     <title>Quick Inspect Pty Ltd. - Best Car Inspection Services Across Australia</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"> 
+    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="./assets/css/bootstrap.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript> -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -211,7 +215,7 @@
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-sm-12 col-md-4 col-lg-4">
-                      <img class="img-fluid" src="./assets/imgs/dealers_1.webp" alt="dealers_1" width="100%" height="100%">
+                      <img class="img-fluid" src="./assets/imgs/dealers_1.webp" loading="lazy" alt="dealers_1" width="100%" height="100%">
                     </div>
                     <div class="col-sm-12 col-md-8 col-lg-8">
                       <ul class="list-group list-group-flush mt-sm-2 mt-lg-0 pb-lg-4 pb-sm-4">
@@ -228,7 +232,7 @@
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-sm-12 col-md-5 col-lg-5">
-                      <img class="img-fluid" src="./assets/imgs/mechanic_2.webp" alt="mechanic_2" srcset="" width="100%" height="100%">
+                      <img class="img-fluid" src="./assets/imgs/mechanic_2.webp" loading="lazy" alt="mechanic_2" srcset="" width="100%" height="100%">
                     </div>
                     <div class="col-sm-12 col-md-7 col-lg-7">
                       <ul class="list-group list-group-flush mt-sm-2 mt-lg-0 pb-lg-4 pb-sm-4">
@@ -972,7 +976,7 @@
         </div>
       </div>
 
-<script>
+<script async>
   document.addEventListener('DOMContentLoaded', function () {
     const mechanic_modal = document.getElementById('mechanic_form');
     const mechanic_iframe = document.getElementById('MechanicFormIframe');
@@ -997,8 +1001,7 @@
     });
   });
 </script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/bootstrap.min.js?v=1.0" defer></script>
 </body>
 
 </html>
