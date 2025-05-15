@@ -7,7 +7,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Quick Inspect – Best Car Inspections in Australia">
     <meta property="og:description" content="Certified pre-purchase inspections with detailed reports. Available across Australia.">
-    <meta property="og:image" content="https://www.quickinspect.com.au/assets/imgs/or-image.png">
+    <meta property="og:image" content="https://www.quickinspect.com.au/assets/imgs/og-image.png">
     <meta property="og:url" content="https://www.quickinspect.com.au/">
     <meta property="og:type" content="website">
 
@@ -148,9 +148,9 @@
         <div class="row">
           <div class="col-lg-12 px-0">
             <h2 class="text-center mt-5 fs-2" aria-label="lowest prices for pre purchase car inspection in australia">Quick Inspect Pricing</h2>
-            <ul class="nav nav-underline mb-lg-4 mb-sm-3 justify-content-center" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm col-md-3 mx-auto my-lg-4 my-sm-4 my-4 justify-content-center" id="pills-tab" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
               <li class="nav-item fs-5" role="presentation">
-                <button class="nav-link active" id="pills-cars-tab" data-bs-toggle="pill" data-bs-target="#pills-cars" type="button" role="tab" aria-controls="pills-cars" aria-selected="true">Cars</button>
+                <button class="nav-link active rounded-5" id="pills-cars-tab" data-bs-toggle="pill" data-bs-target="#pills-cars" type="button" role="tab" aria-controls="pills-cars" aria-selected="true">Cars</button>
               </li>
             </ul>
             <div class="tab-content bg-offerings-tab p-lg-5 p-sm-2" id="pills-tabContent">
@@ -204,12 +204,12 @@
           <div class="col-lg-12">
             <h2 class="text-center mt-5 fs-2">Why Quick Inspect?</h2>
             <p class="text-center mb-0">An Independent, Objective, Unbiased, Comprehensive and Scientific Auto Inspection Service</p>
-            <ul class="nav nav-underline mb-lg-4 mb-sm-4 justify-content-center" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm col-md-3 mx-auto my-lg-4 my-sm-4 my-4 justify-content-center" id="pills-tab" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
               <li class="nav-item fs-5" role="presentation">
-                <button class="nav-link active" id="pills-dealers-tab" data-bs-toggle="pill" data-bs-target="#pills-dealers" type="button" role="tab" aria-controls="pills-dealers" aria-selected="true">Dealers</button>
+                <button class="nav-link active rounded-5" id="pills-dealers-tab" data-bs-toggle="pill" data-bs-target="#pills-dealers" type="button" role="tab" aria-controls="pills-dealers" aria-selected="true">Dealers</button>
               </li>
               <li class="nav-item fs-5" role="presentation">
-                <button class="nav-link" id="pills-mechanics-tab" data-bs-toggle="pill" data-bs-target="#pills-mechanics" type="button" role="tab" aria-controls="pills-mechanics" aria-selected="false">Mechanics</button>
+                <button class="nav-link rounded-5" id="pills-mechanics-tab" data-bs-toggle="pill" data-bs-target="#pills-mechanics" type="button" role="tab" aria-controls="pills-mechanics" aria-selected="false">Mechanics</button>
               </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -274,9 +274,9 @@
         <div class="row">
           <div class="col-lg-12 px-0">
             <h2 class="text-center mt-5 fs-2">How we work?</h2>
-            <ul class="nav nav-underline mb-lg-4 mb-sm-3 justify-content-center" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm col-md-3 mx-auto my-lg-4 my-sm-4 my-4 justify-content-center" id="pills-tab" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
               <li class="nav-item fs-5" role="presentation">
-                <button class="nav-link active" id="pills-dealers-1-tab" data-bs-toggle="pill" data-bs-target="#pills-dealers-1" type="button" role="tab" aria-controls="pills-dealers-1" aria-selected="true">Dealers</button>
+                <button class="nav-link active rounded-5" id="pills-dealers-1-tab" data-bs-toggle="pill" data-bs-target="#pills-dealers-1" type="button" role="tab" aria-controls="pills-dealers-1" aria-selected="true">Dealers</button>
               </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -983,6 +983,32 @@
       </div>
 
 <script async>
+   const tabContent = document.getElementById('pills-tabContent');
+  let xDown = null;
+
+tabContent.addEventListener('touchstart', function(evt) {
+  xDown = evt.touches[0].clientX;
+}, false);
+
+tabContent.addEventListener('touchend', function(evt) {
+  if (!xDown) return;
+
+  let xUp = evt.changedTouches[0].clientX;
+  let xDiff = xDown - xUp;
+
+  if (Math.abs(xDiff) > 50) {
+    if (xDiff > 0) {
+      switchTab(currentIndex + 1); // Swipe left
+    } else {
+      switchTab(currentIndex - 1); // Swipe right
+    }
+  }
+  xDown = null;
+}, false);
+
+
+
+
   document.addEventListener('DOMContentLoaded', function () {
     const mechanic_modal = document.getElementById('mechanic_form');
     const mechanic_iframe = document.getElementById('MechanicFormIframe');
