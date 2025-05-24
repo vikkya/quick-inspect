@@ -97,36 +97,97 @@
 .list-style-decimal {
   list-style-type: decimal;
 }
-.step-01-bg{
-  background-color: #007BFF;
-}
-.step-01-text{
-  color: #FFF7B2;
-}
-.step-02-bg{
-  background-color: #B2F5EA;
-}
-.step-02-text{
-  color: #1A365D;
-}
-.step-03-bg{
-  background-color: #E0BBE4;
-}
-.step-03-text{
-  color: #3B0A45;
-}
-.step-04-bg{
-  background-color: #FFDAB9;
-}
-.step-04-text{
-  color: #004D40;
-}
-.step-05-bg{
-  background-color: #FFEB3B;
-}
-.step-05-text{
-  color: #1E40AF;
-}
+.timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+
+    /* Vertical Line for Mobile */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 4px;
+      height: 100%;
+      background: #007BFF;
+      z-index: 1;
+    }
+
+    .timeline-step {
+      background: #fff;
+      padding: 1.5rem 1.5rem 1.5rem 3rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      margin-left: 2.5rem;
+    }
+
+    .timeline-step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: 1.5rem;
+      left: -40px;
+      background: #007BFF;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 0.9rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .timeline-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      color: #555;
+    }
+
+    /* Horizontal Layout for Medium+ Screens */
+    @media (min-width: 768px) {
+      .timeline {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* padding-top: 3rem; */
+      }
+
+      .timeline::before {
+        top: 8px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 4px;
+        width: 100%;
+        background: #007BFF;
+        transform: translateY(-1.5rem);
+      }
+
+      .timeline-step {
+        flex: 1;
+        text-align: center;
+        padding: 2rem 1rem 1rem;
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      .timeline-step::before {
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
 </style>
 </head>
 <body>
@@ -309,96 +370,28 @@
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-dealers-1" role="tabpanel" aria-labelledby="pills-dealers-1-tab" tabindex="0">
                 <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <div class="row">
-                        <div class="col-lg-6 mb-2">
-                          <div class="card mb-3 h-100 step-01-bg">
-                            <div class="row g-0">
-                              <div class="col-md-2">
-                                <div>
-                                  <p class="mb-0 fs-4 fw-bold step-01-text">Step</p> 
-                                  <p class="mb-0 lh-05 fs-1 fw-bold step-01-text">01</p>
-                                </div>
-                              </div>
-                              <div class="col-md-10 pb-3">
-                                <div class="card-body step-cards bg-white">
-                                  <p class="card-title fs-6 lh-1 h5">Place your order on our app and  track your order.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                  <div class="row my-5">
+                    <div class="col-12">
+                      <div class="timeline">
+                        <div class="timeline-step" data-step="1">
+                          <div class="timeline-title"></div>
+                          <div class="timeline-desc">Place your order on our app and track your order.</div>
                         </div>
-                        <div class="col-lg-6 mb-2">
-                          <div class="card mb-3 h-100 step-02-bg">
-                            <div class="row g-0">
-                              <div class="col-md-2">
-                                <div>
-                                  <p class="mb-0 fs-4 fw-bold step-02-text">Step</p> 
-                                  <p class="mb-0 lh-05 fs-1 fw-bold step-02-text">02</p>
-                                </div>
-                              </div>
-                              <div class="col-md-10 pb-3">
-                                <div class="card-body step-cards bg-white">
-                                  <p class="card-title fs-6 lh-1 h5">Your order request gets forwarded to Quick Inspect</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="timeline-step" data-step="2">
+                          <div class="timeline-title"></div>
+                          <div class="timeline-desc">Your order request gets forwarded to Quick Inspect</div>
                         </div>
-                        <div class="col-lg-6 mb-2">
-                          <div class="card mb-3 h-100 step-03-bg">
-                            <div class="row g-0">
-                              <div class="col-md-2">
-                                <div>
-                                  <p class="mb-0 fs-4 fw-bold step-03-text">Step</p> 
-                                  <p class="mb-0 lh-05 fs-1 fw-bold step-03-text">03</p>
-                                </div>
-                              </div>
-                              <div class="col-md-10 pb-3">
-                                <div class="card-body step-cards bg-white">
-                                  <p class="card-title fs-6 lh-1 h5">Order gets mapped to the expert Technician</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="timeline-step" data-step="3">
+                          <div class="timeline-title"></div>
+                          <div class="timeline-desc">Order gets mapped to the expert Technician</div>
                         </div>
-                        <div class="col-lg-6 mb-2">
-                          <div class="card mb-3 h-100 step-04-bg">
-                            <div class="row g-0">
-                              <div class="col-md-2">
-                                <div>
-                                  <p class="mb-0 fs-4 fw-bold step-04-text">Step</p> 
-                                  <p class="mb-0 lh-05 fs-1 fw-bold step-04-text">04</p>
-                                </div>
-                              </div>
-                              <div class="col-md-10 pb-3">
-                                <div class="card-body step-cards bg-white">
-                                  <p class="card-title fs-6 lh-1 h5">Technician performs Inspection through Quick Inspect app</p>   
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <div class="timeline-step" data-step="4">
+                          <div class="timeline-title"></div>
+                          <div class="timeline-desc">Technician performs Inspection through Quick Inspect app</div>
                         </div>
-                        <div class="col-lg-6 mb-2">
-                          <div class="card mb-3 h-100 step-05-bg">
-                            <div class="row g-0">
-                              <div class="col-md-2">
-                                <div>
-                                  <p class="mb-0 fs-4 fw-bold step-05-text">Step</p> 
-                                  <p class="mb-0 lh-05 fs-1 fw-bold step-05-text">05</p>
-                                </div>
-                              </div>
-                              <div class="col-md-10 pb-3">
-                                <div class="card-body step-cards bg-white bg-opacity-75">
-                                  <p class="card-title fs-6 lh-1 h5">Receive Digital Inspection Report in a minute*.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 align-self-center text-center">
-                          <button class="btn btn-danger btn-lg mb-3 mb-md-1" data-bs-toggle="modal" data-bs-target="#dealer_form">Request a call back!</button>
+                        <div class="timeline-step" data-step="5">
+                          <div class="timeline-title"></div>
+                          <div class="timeline-desc">Receive Digital Inspection Report in a minute*.</div>
                         </div>
                       </div>
                     </div>
