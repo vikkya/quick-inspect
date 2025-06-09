@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Quick Inspect Tax Invoice Form{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form action="/generate_invoice" method="post">
+                <div class="mb-2">
+                    <label for="company_name" class="form-label">Enter Company Name:</label>
+                    <input type="text" class="form-control" name="company_name" id="company_name">
+                </div>
+                <div class="mb-2">
+                    <label for="address" class="form-label">Enter Address:</label>
+                    <input type="text" class="form-control" name="address" id="address">
+                </div>
+                <div class="mb-2">
+                    <label for="abn_number" class="form-label">Enter ABN Number:</label>
+                    <input type="text" class="form-control" name="abn_number" id="abn_number">
+                </div>
+                <div class="mb-2">
+                    <label for="invoice_date" class="form-label">Enter Invoice Date:</label>
+                    <input type="date" class="form-control" name="invoice_date" id="invoice_date" onchange="invoiceDateHandler(this)">
+                </div>
+                <div class="mb-2">
+                    <label for="invoice_number" class="form-label">Enter Invoice Number:</label>
+                    <input type="text" class="form-control" name="invoice_number" id="invoice_number">
+                </div>
+                <div class="mb-2">
+                    <label for="reference" class="form-label">Enter Reference:</label>
+                    <input type="text" class="form-control" name="reference" id="reference">
+                </div>
+                <div class="description mb-2" id="description">
+                    <p class="fw-bold">Standard Inspection</p>
+                    <div class="description_row d-flex">
+                        <div>
+                            <label for="description" class="form-label">Enter description:</label>
+                            <input type="text" class="form-control" name="description[]" id="description">
+                        </div>
+                        <div>
+                            <label for="qty" class="form-label">Enter qty:</label>
+                            <input type="number" class="form-control" name="qty[]" id="qty">
+                        </div>
+                        <div>
+                            <label for="price" class="form-label">Enter price:</label>
+                            <input type="number" class="form-control" name="price[]" id="price">
+                        </div>
+                        <button type="button" class="remove-btn" onclick="removeField(this)">X</button>
+                        
+                    </div>
+                </div>
+                <button type="button" class="add_more" id="add_more" onclick="addMore()">add more</button>
+                <div class="mb-2">
+                    <input class="form-control" type="date" name="due_date" id="due_date">
+                </div>
+                <button type="submit"  class="btn btn-primary">Generate</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addMore() {
+        const container = document.getElementById('description');
+
+        const div = document.createElement('div');
+        div.classList.add('description_row');
+        div.classList.add('d-flex');
+
+        div.innerHTML = `
+            <div>
+                <label for="description" class="form-label">Enter description:</label>
+                <input type="text" class="form-control" name="description[]" id="description">
+            </div>
+            <div>
+                <label for="qty" class="form-label">Enter qty:</label>
+                <input type="number" class="form-control" name="qty[]" id="qty">
+            </div>
+            <div>
+                <label for="price" class="form-label">Enter price:</label>
+                <input type="number" class="form-control" name="price[]" id="price">
+            </div>
+            <button type="button" class="remove-btn" onclick="removeField(this)">X</button>
+        `;
+
+        container.appendChild(div);
+    }
+    function removeField(button) {
+        const fieldSet = button.parentElement;
+        fieldSet.remove();
+        }
+    
+    function invoiceDateHandler(d){
+        const dateObj = new Date(d.value);
+
+        // Add 7 days
+        dateObj.setDate(dateObj.getDate() + 7);
+
+        // Format back to YYYY-MM-DD
+        const newDate = dateObj.toISOString().split('T')[0];
+        document.getElementById("due_date").value = newDate
+        console.log(d.value)
+    }
+</script>
+
+{% endblock %}

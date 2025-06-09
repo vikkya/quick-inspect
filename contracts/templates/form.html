@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Quick Inspect Contract Form{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form action="/get_data" method="post">
+                <div class="mb-2">
+                    <label for="company_name" class="form-label">Enter Company Name:</label>
+                    <input type="text" class="form-control" name="company_name" id="company_name">
+                </div>
+                <div class="mb-2">
+                    <label for="full_name" class="form-label">Enter Full Name:</label>
+                    <input type="text" class="form-control" name="full_name" id="full_name">
+                </div>
+                <div class="mb-2">
+                    <label for="address_1" class="form-label">Enter Address 1:</label>
+                    <input type="text" class="form-control" name="address_1" id="address_1">
+                </div>
+                <div class="mb-2">
+                    <label for="address_2" class="form-label">Enter Address 2:</label>
+                    <input type="text" class="form-control" name="address_2" id="address_2">
+                </div>
+                <div class="mb-2">
+                    <label for="phone_number" class="form-label">Enter Phone Number:</label>
+                    <input type="tel" class="form-control" name="phone_number" id="phone_number">
+                </div>
+                <div class="mb-2">
+                    <label for="abn_number" class="form-label">Enter ABS Number:</label>
+                    <input type="text" class="form-control" name="abn_number" id="abn_number">
+                </div>
+                <div class="mb-2">
+                    <label for="distance_covered" class="form-label">Enter Distance Covered:</label>
+                    <input type="text" class="form-control" name="distance_covered" id="distance_covered">
+                </div>
+                <div class="mb-2">
+                    <label for="standard_inspection" class="form-label">Enter Standard Inspection:</label>
+                    <textarea class="form-control" name="standard_inspection" id="standard_inspection"></textarea>
+                </div>
+                <div class="mb-2">
+                    <label for="outside_suburbs_charge" class="form-label">Enter Distance Covered:</label>
+                    <input type="text" class="form-control" name="outside_suburbs_charge" id="outside_suburbs_charge">
+                </div>
+                <div class="mb-2">
+                    <label for="suburbs_list" class="form-label">Enter Suburb list:</label>
+                    <textarea class="form-control" name="suburbs_list" id="suburbs_list"></textarea>
+                </div>
+                <div class="mb-2">
+                    <label for="account_name" class="form-label">Enter Account Name:</label>
+                    <input type="text" class="form-control" name="account_name" id="account_name">
+                </div>
+                <div class="mb-2">
+                    <label for="bsb" class="form-label">Enter Account Name:</label>
+                    <input type="text" class="form-control" name="bsb" id="bsb">
+                </div>
+                <div class="mb-2">
+                    <label for="account_number" class="form-label">Enter Account Number:</label>
+                    <input type="number" class="form-control" name="account_number" id="account_number">
+                </div>
+                <div class="mb-2">
+                    <label for="contract_date" class="form-label">Enter Contract Date:</label>
+                    <input type="date" class="form-control" name="contract_date" id="contract_date">
+                </div>
+                <button type="submit"  class="btn btn-primary">Generate</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

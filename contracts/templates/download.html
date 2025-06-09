@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Quick Inspect Contract Form{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <a href="{{ url_for('static', filename=doc_name) }}" download>Download as Docx</a>
+            <a href="{{ url_for('static', filename=pdf_name) }}" download>Download as PDF</a>
+        </div>
+        <div class="col-6">
+            <embed src="{{ url_for('static', filename=pdf_name) }}" type="text/pdf" width="100%" height="500px">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
