@@ -6,6 +6,11 @@
         <div class="col-6">
             <form action="/generate_invoice" method="post">
                 <div class="mb-2">
+                    <label for="company_id" class="form-label">Enter Company Id:</label>
+                    <input type="text" class="form-control" name="company_id" id="company_id">
+                    <button class="btn btn-info" type="button" onclick="get_dealer()">get info</button>
+                </div>
+                <div class="mb-2">
                     <label for="company_name" class="form-label">Enter Company Name:</label>
                     <input type="text" class="form-control" name="company_name" id="company_name">
                 </div>
@@ -42,17 +47,24 @@
                         </div>
                         <div>
                             <label for="price" class="form-label">Enter price:</label>
-                            <input type="number" class="form-control" name="price[]" id="price">
+                            <input type="number" step="0.01" class="form-control" name="price[]" id="price">
                         </div>
-                        <button type="button" class="remove-btn" onclick="removeField(this)">X</button>
+                        <button type="button" class="remove-btn btn btn-danger" onclick="removeField(this)">X</button>
                         
                     </div>
                 </div>
-                <button type="button" class="add_more" id="add_more" onclick="addMore()">add more</button>
+                <button type="button" class="add_more btn btn-warning" id="add_more" onclick="addMore()">add more</button>
                 <div class="mb-2">
+                    <label for="travel_expense_required" class="form-label">is travel expense required?</label>
+                    <input type="checkbox" name="travel_expense_required" id="travel_expense_required" onclick="travel_expense_handler()"> <br/>
+                    <label for="travel_expense" class="form-label">Enter Travel Expense</label>
+                    <input class="form-control" type="number" name="travel_expense" id="travel_expense" value="0" disabled>
+                </div>
+                <div class="mb-2">
+                    <label for="due_date" class="form-label">Enter Due Date:</label>
                     <input class="form-control" type="date" name="due_date" id="due_date">
                 </div>
-                <button type="submit"  class="btn btn-primary">Generate</button>
+                <button type="submit"  class="btn btn-primary" onclick="generate()">Generate</button>
             </form>
         </div>
     </div>
@@ -79,7 +91,7 @@
                 <label for="price" class="form-label">Enter price:</label>
                 <input type="number" class="form-control" name="price[]" id="price">
             </div>
-            <button type="button" class="remove-btn" onclick="removeField(this)">X</button>
+            <button type="button" class="remove-btn btn btn-danger" onclick="removeField(this)">X</button>
         `;
 
         container.appendChild(div);
@@ -99,6 +111,39 @@
         const newDate = dateObj.toISOString().split('T')[0];
         document.getElementById("due_date").value = newDate
         console.log(d.value)
+    }
+
+    function travel_expense_handler() {
+        const flag = document.getElementById("travel_expense_required").checked
+        if (flag == true) {
+            document.getElementById("travel_expense").removeAttribute("disabled")
+        }else{
+            document.getElementById("travel_expense").setAttribute("disabled", true)
+        }
+    }
+
+    async function get_dealer(){
+        const id = document.getElementById("company_id").value
+        const res = await fetch(`/read_data/${id}`)
+        const data = await res.json()
+        const record = data[0]
+        const inv_res = await fetch('/get_invoice_id')
+        const inv_data = await inv_res.json()
+        console.log(inv_data, "inv_data")
+        const invoice_data = inv_data['id']
+        document.getElementById("company_name").value = record['name']
+        document.getElementById("address").value = record['address']
+        document.getElementById("abn_number").value = record['abn']
+        document.getElementById("invoice_number").value = `QI - ${invoice_data}`
+    }
+
+    async function generate(){
+        await fetch('/get_invoice_id', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
     }
 </script>
 

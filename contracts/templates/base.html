@@ -7,11 +7,30 @@
     {% endblock %}
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Contracts & Invoices</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/onboard">Dealer's Onboard</a>
+            <a class="nav-link" href="/invoice">Invoice</a>
+            <a class="nav-link" href="/contract">Mechanic's Onboard</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
       {% block footer %}
       &copy; Copyright 2025 by <a href="http://www.quickinspect.com.au/">Quick Inspect</a>.
       {% endblock %}
     </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

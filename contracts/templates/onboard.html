@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Quick Inspect Dealers Onboard Form{% endblock %}
+{% block content %}
+
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+    <div class="toast-container top-0 end-0 p-3">
+        <div class="toast {{ toast }}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
+            <div class="toast-header">
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-bg-success">
+              Dealer successfully added to the records.
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form action="/onboard" method="post">
+                <div class="mb-2">
+                    <label for="company_name" class="form-label">Enter Company Name:</label>
+                    <input type="text" class="form-control" name="company_name" id="company_name">
+                </div>
+                <div class="mb-2">
+                    <label for="address" class="form-label">Enter Address:</label>
+                    <input type="text" class="form-control" name="address" id="address">
+                </div>
+                <div class="mb-2">
+                    <label for="abn_number" class="form-label">Enter ABN Number:</label>
+                    <input type="text" class="form-control" name="abn_number" id="abn_number">
+                </div>
+
+                <button type="submit"  class="btn btn-primary">Onboard</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
