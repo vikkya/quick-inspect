@@ -1,21 +1,113 @@
 {% extends "base.html" %}
 {% block title %}Quick Inspect Dealers Details{% endblock %}
 {% block content %}
-    <h1>Dealers and thier id's</h1>
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col" class="text-center">#</th>
-            <th scope="col" class="">Dealer's name</th>
-          </tr>
-        </thead>
-        <tbody>
-            {% for i in data %}
-          <tr>
-            <th scope="row" class="text-center">{{ i['id'] }}</th>
-            <td class="">{{ i['name'] }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+<h4 class="text-center">Dealers and thier id's</h4>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col" class="">Dealer's name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr ondblclick="edit_dealer(this)">
+                        <th scope="row" class="text-center">{{ i['id'] }}</th>
+                        <td class="">{{ i['name'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="dealerEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit/Delete Dealer</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <label for="company_name" class="form-label">Enter Company Name:</label>
+                        <input type="text" class="form-control" name="company_name" id="company_name"
+                            autocomplete='off'>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="company_address" class="form-label">Enter Company Address:</label>
+                        <input type="text" class="form-control" name="company_address" id="company_address"
+                            autocomplete='off'>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="company_abn" class="form-label">Enter Company ABN:</label>
+                        <input type="text" class="form-control" name="company_abn" id="company_abn" autocomplete='off'>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="save_dealer()">Save changes</button>
+                <button type="button" class="btn btn-danger" onclick="delete_dealer()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var global_id = ''
+    async function edit_dealer(row) {
+        const key = prompt("Enter Secret Key")
+        const id = row.querySelector('th')
+        global_id = id.textContent
+        const res = await fetch('/verify_key', {
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'key': key})
+        })
+        const data = await res.json()
+        if (data.success) {
+            var myModal = new bootstrap.Modal(document.getElementById('dealerEditModal'));
+            myModal.show();
+        }else{
+            alert("Wrong Key!!!!")
+        }
+    }
+    document.getElementById('dealerEditModal').addEventListener('shown.bs.modal', async function () {
+        const res = await fetch(`/read_data/${global_id}`)
+        const data = await res.json()
+        const record = data[0]
+        document.getElementById('company_name').value = record['name']
+        document.getElementById('company_address').value = record['address']
+        document.getElementById('company_abn').value = record['abn']
+    })
+
+    async function save_dealer() {
+        const name = document.getElementById('company_name').value
+        const address = document.getElementById('company_address').value
+        const abn = document.getElementById('company_abn').value
+        const data = {"id": global_id, "name": name, "address": address, "abn": abn}
+        const res = await fetch('/update_dealer', {
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        location.reload()
+    }
+
+    async function delete_dealer() {
+        const res = await fetch(`/delete_dealer/${global_id}`)
+        location.reload()
+    }
+
+</script>
 {% endblock %}

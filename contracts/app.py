@@ -1,14 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for
-from docx import Document
+from flask import Flask, render_template, request, jsonify
 from docxtpl import DocxTemplate
 import os
 import subprocess
 import sqlite3
 import json
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 DOWNLOAD_FOLDER = os.path.join(app.root_path, 'static', 'downloads')
 app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
+
+load_dotenv()
 
 @app.route("/")
 def index():
@@ -73,8 +75,9 @@ def generate_invoice():
         desc_list = request.form.getlist('description[]')
         qty_list = request.form.getlist('qty[]')
         price_list = request.form.getlist('price[]')
-        travel_exp_required = request.form.get('travel_expense_required'),
-        travel_expense = int(request.form.get('travel_expense')),
+        travel_exp_required = request.form.get('travel_expense_required')
+        print(travel_exp_required, "travel_exp_required")
+        travel_expense = int(request.form.get('travel_expense') or '0')
         for desc, qty, price in zip(desc_list, qty_list, price_list):
             total = int(qty) * float(price)
             items.append({
@@ -84,6 +87,7 @@ def generate_invoice():
                 'total': total
             })
             subtotal += total
+        subtotal = round(subtotal, 2)
         gst = round((subtotal / 100 ) * 10, 2)
         grand_total = subtotal + gst
         if travel_exp_required:
@@ -104,6 +108,7 @@ def generate_invoice():
             'grand_total': grand_total,
 
         }
+    print(payload)
     template_path = 'tax_invoice_template.docx'
     name = f"INV {payload['invoice_number']} - {payload['invoice_date']}"
     # file_name, output_pdf = (None, None)
@@ -138,7 +143,6 @@ def onboard():
 @app.route("/read_data/<int:id>", methods=['GET'])
 def read_data(id):
     try:
-        print(type(id), "id")
         db_path = './static/db/qi.db'
         conn = sqlite3.connect(db_path)
         conn.row_factory = sqlite3.Row
@@ -152,6 +156,41 @@ def read_data(id):
         if conn:
             conn.close()
     return json.dumps(response)
+
+@app.route("/update_dealer", methods=['POST'])
+def update_dealer():
+    try:
+        data = request.get_json()
+        id = data['id']
+        name = data['name']
+        address = data['address']
+        abn = data['abn']
+        db_path = './static/db/qi.db'
+        conn = sqlite3.connect(db_path)
+        cur = conn.cursor()
+        cur.execute(f"update dealers set name = '{name}', address = '{address}', abn = '{abn}' where id = {id}")
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"DB dealer update error {e}")
+    finally:
+        if conn:
+            conn.close()
+    return json.dumps({'status': 'ok'})
+
+@app.route("/delete_dealer/<int:id>", methods=['GET'])
+def delete_dealer(id):
+    try:
+        db_path = './static/db/qi.db'
+        conn = sqlite3.connect(db_path)
+        cur = conn.cursor()
+        cur.execute(f"delete from dealers where id = {id}")
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"DB insert error {e}")
+    finally:
+        if conn:
+            conn.close()
+    return json.dumps({'status': 'ok'})
 
 @app.route("/get_invoice_id", methods=['GET', 'POST'])
 def get_invoice_id():
@@ -179,6 +218,16 @@ def get_invoice_id():
             if conn:
                 conn.close()
         return {"status": 200}
+
+@app.route('/verify_key', methods=['POST'])
+def verify_key():
+    data = request.get_json()
+    print(data)
+    user_key = data.get('key', '')
+    print(user_key, 'user_key')
+    if user_key == os.getenv('ACCESS_KEY'):
+        return jsonify(success=True)
+    return jsonify(success=False)
 
 
 def fill_contract(template_path, name, payload):

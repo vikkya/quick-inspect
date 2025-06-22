@@ -1,73 +1,87 @@
 {% extends "base.html" %}
 {% block title %}Quick Inspect Tax Invoice Form{% endblock %}
 {% block content %}
+<h4 class="text-center">Dealer Tax Invoice Generate</h4>
 <div class="container">
-    <div class="row">
-        <div class="col-6">
-            <form action="/generate_invoice" method="post">
-                <div class="mb-2">
+    <form action="/generate_invoice" method="post" class="row">
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <div class="row">
+                <div class="col">
                     <label for="company_id" class="form-label">Enter Company Id:</label>
-                    <input type="text" class="form-control" name="company_id" id="company_id">
-                    <button class="btn btn-info" type="button" onclick="get_dealer()">get info</button>
+                    <input type="number" class="form-control" name="company_id" id="company_id">
                 </div>
-                <div class="mb-2">
-                    <label for="company_name" class="form-label">Enter Company Name:</label>
-                    <input type="text" class="form-control" name="company_name" id="company_name">
+                <div class="col align-self-end">
+                    <button class="btn btn-info w-100 mt-2" type="button" onclick="get_dealer()">Auto Fill</button>
                 </div>
-                <div class="mb-2">
-                    <label for="address" class="form-label">Enter Address:</label>
-                    <input type="text" class="form-control" name="address" id="address">
-                </div>
-                <div class="mb-2">
-                    <label for="abn_number" class="form-label">Enter ABN Number:</label>
-                    <input type="text" class="form-control" name="abn_number" id="abn_number">
-                </div>
-                <div class="mb-2">
-                    <label for="invoice_date" class="form-label">Enter Invoice Date:</label>
-                    <input type="date" class="form-control" name="invoice_date" id="invoice_date" onchange="invoiceDateHandler(this)">
-                </div>
-                <div class="mb-2">
-                    <label for="invoice_number" class="form-label">Enter Invoice Number:</label>
-                    <input type="text" class="form-control" name="invoice_number" id="invoice_number">
-                </div>
-                <div class="mb-2">
-                    <label for="reference" class="form-label">Enter Reference:</label>
-                    <input type="text" class="form-control" name="reference" id="reference">
-                </div>
-                <div class="description mb-2" id="description">
-                    <p class="fw-bold">Standard Inspection</p>
-                    <div class="description_row d-flex">
-                        <div>
-                            <label for="description" class="form-label">Enter description:</label>
-                            <input type="text" class="form-control" name="description[]" id="description">
-                        </div>
-                        <div>
-                            <label for="qty" class="form-label">Enter qty:</label>
-                            <input type="number" class="form-control" name="qty[]" id="qty">
-                        </div>
-                        <div>
-                            <label for="price" class="form-label">Enter price:</label>
-                            <input type="number" step="0.01" class="form-control" name="price[]" id="price">
-                        </div>
-                        <button type="button" class="remove-btn btn btn-danger" onclick="removeField(this)">X</button>
-                        
+            </div>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="company_name" class="form-label">Enter Company Name:</label>
+            <input type="text" class="form-control" name="company_name" id="company_name" required>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="address" class="form-label">Enter Address:</label>
+            <input type="text" class="form-control" name="address" id="address" required>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="abn_number" class="form-label">Enter ABN Number:</label>
+            <input type="text" class="form-control" name="abn_number" id="abn_number" required>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="invoice_date" class="form-label">Enter Invoice Date:</label>
+            <input type="date" class="form-control" name="invoice_date" id="invoice_date"
+                onchange="invoiceDateHandler(this)" required>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="invoice_number" class="form-label">Enter Invoice Number:</label>
+            <input type="text" class="form-control" name="invoice_number" id="invoice_number" required>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="reference" class="form-label">Enter Reference:</label>
+            <input type="text" class="form-control" name="reference" id="reference">
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <div class="description" id="description">
+                <p class="fw-bold">Standard Inspection</p>
+                <div class="description_row row mb-2">
+                    <div class="col-6 col-sm-6 col-md-5">
+                        <label for="description[]" class="form-label">Enter description:</label>
+                        <input type="text" class="form-control" name="description[]" id="description" required>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <label for="qty[]" class="form-label">Enter qty:</label>
+                        <input type="number" class="form-control" name="qty[]" id="qty" required>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <label for="price[]" class="form-label">Enter price:</label>
+                        <input type="number" step="0.01" class="form-control" name="price[]" id="price" required>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-1 align-self-end">
+                        <button type="button" class="remove-btn btn btn-danger" onclick="removeField(this)">x</button>
                     </div>
                 </div>
-                <button type="button" class="add_more btn btn-warning" id="add_more" onclick="addMore()">add more</button>
-                <div class="mb-2">
-                    <label for="travel_expense_required" class="form-label">is travel expense required?</label>
-                    <input type="checkbox" name="travel_expense_required" id="travel_expense_required" onclick="travel_expense_handler()"> <br/>
+            </div>
+            <button type="button" class="add_more btn btn-warning w-100 mt-2" id="add_more" onclick="addMore()">Add More</button>
+        </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <div class="row">
+                <div class="col form-check">
+                    <label for="travel_expense_required" class="form-check-label">is travel expense required?</label>
+                    <input class="form-check-input" type="checkbox" name="travel_expense_required" id="travel_expense_required"
+                        onclick="travel_expense_handler()">
+                </div>
+                <div class="col">
                     <label for="travel_expense" class="form-label">Enter Travel Expense</label>
                     <input class="form-control" type="number" name="travel_expense" id="travel_expense" value="0" disabled>
                 </div>
-                <div class="mb-2">
-                    <label for="due_date" class="form-label">Enter Due Date:</label>
-                    <input class="form-control" type="date" name="due_date" id="due_date">
-                </div>
-                <button type="submit"  class="btn btn-primary" onclick="generate()">Generate</button>
-            </form>
+            </div>
         </div>
-    </div>
+        <div class="mb-2 col-12 col-sm-12 col-md-6">
+            <label for="due_date" class="form-label">Enter Due Date:</label>
+            <input class="form-control" type="date" name="due_date" id="due_date">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="generate()">Generate</button>
+    </form>
 </div>
 
 <script>
@@ -76,32 +90,36 @@
 
         const div = document.createElement('div');
         div.classList.add('description_row');
-        div.classList.add('d-flex');
+        div.classList.add('row');
+        div.classList.add('mb-2');
 
         div.innerHTML = `
-            <div>
-                <label for="description" class="form-label">Enter description:</label>
-                <input type="text" class="form-control" name="description[]" id="description">
+            <div class="col-6 col-sm-6 col-md-5">
+                <label for="description[]" class="form-label">Enter description:</label>
+                <input type="text" class="form-control" name="description[]" id="description" required>
             </div>
-            <div>
-                <label for="qty" class="form-label">Enter qty:</label>
-                <input type="number" class="form-control" name="qty[]" id="qty">
+            <div class="col-6 col-sm-6 col-md-3">
+                <label for="qty[]" class="form-label">Enter qty:</label>
+                <input type="number" class="form-control" name="qty[]" id="qty" required>
             </div>
-            <div>
-                <label for="price" class="form-label">Enter price:</label>
-                <input type="number" class="form-control" name="price[]" id="price">
+            <div class="col-6 col-sm-6 col-md-3">
+                <label for="price[]" class="form-label">Enter price:</label>
+                <input type="number" step="0.01" class="form-control" name="price[]" id="price" required>
             </div>
-            <button type="button" class="remove-btn btn btn-danger" onclick="removeField(this)">X</button>
+            <div class="col-6 col-sm-6 col-md-1 align-self-end">
+                <button type="button" class="remove-btn btn btn-danger" onclick="removeField(this)">x</button>
+            </div>
+
         `;
 
         container.appendChild(div);
     }
     function removeField(button) {
-        const fieldSet = button.parentElement;
+        const fieldSet = button.parentElement.parentElement;
         fieldSet.remove();
-        }
-    
-    function invoiceDateHandler(d){
+    }
+
+    function invoiceDateHandler(d) {
         const dateObj = new Date(d.value);
 
         // Add 7 days
@@ -117,12 +135,12 @@
         const flag = document.getElementById("travel_expense_required").checked
         if (flag == true) {
             document.getElementById("travel_expense").removeAttribute("disabled")
-        }else{
+        } else {
             document.getElementById("travel_expense").setAttribute("disabled", true)
         }
     }
 
-    async function get_dealer(){
+    async function get_dealer() {
         const id = document.getElementById("company_id").value
         const res = await fetch(`/read_data/${id}`)
         const data = await res.json()
@@ -137,7 +155,7 @@
         document.getElementById("invoice_number").value = `QI - ${invoice_data}`
     }
 
-    async function generate(){
+    async function generate() {
         await fetch('/get_invoice_id', {
             method: 'POST',
             headers: {
